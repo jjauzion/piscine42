@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/14 15:02:33 by jjauzion          #+#    #+#             */
-/*   Updated: 2017/08/15 12:40:23 by jjauzion         ###   ########.fr       */
+/*   Updated: 2017/08/16 22:23:45 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ int		main(int argc, char **argv)
 		return (0);
 	}
 	str1 = ft_strdup(argv[1]);
-	printf("resultat:%s\n", str1);
+	printf("resultat:\t%s\n", str1);
 	str2 = strdup(argv[1]);
-	printf("attendu:%s\n", str2);
+	printf("attendu:\t%s\n", str2);
 */
 //	Exo 01
 /*	int *res;
@@ -59,7 +59,7 @@ int		main(int argc, char **argv)
 		return (0);
 	}
 	i = 0;
-	while (i <= max - min)
+	while (i < max - min)
 	{
 		printf("res[%i]:\t%i\n", i, res[i]);
 		i++;
@@ -87,7 +87,7 @@ int		main(int argc, char **argv)
 	}
 	i = 0;
 	printf("range = %i\n", range);
-	while (i <= max - min)
+	while (i < max - min)
 	{
 		printf("tab[%i]:\t%i\n", i, tab[i]);
 		i++;
@@ -109,19 +109,32 @@ int		main(int argc, char **argv)
 */
 //	Exo6
 	char *res;
-	int i;
 	
-	i = argc;
-	res = argv[0];
+	if (argc != 4)
+	{
+		printf("%i: trois arguments requis !!\n", argc);
+		return (0);
+	}
 
+	res = ft_convert_base("ifenopef","poneyvifp", "01");
+	printf("test 0: \"ifenopef\",\"poneyvifp\", \"01\"\nAttendu:\t|(null)\nResultat:\t|%s\n", res);
+	res = ft_convert_base("ifenopef","poneyvif", "11");
+	printf("test 1: \"ifenopef\",\"poneyvif\", \"11\"\nAttendu:\t|(null)\nResultat:\t|%s\n", res);
+	res = ft_convert_base("ifenopef","poneyvif", "1");
+	printf("test 2: \"ifenopef\",\"poneyvif\", \"1\"\nAttendu:\t|(null)\nResultat:\t|%s\n", res);
+	res = ft_convert_base("ifenopef","poneyvif", "");
+	printf("test 3: \"ifenopef\",\"poneyvif\", \"\"\nAttendu:\t|(null)\nResultat:\t|%s\n", res);
 	res = ft_convert_base("ifenopef","poneyvif", "lOL");
-	printf("test 1: \"ifenopef\",\"poneyvif\", \"lOL\"\nAttendu:\tOllllLLLLOOOOOOl\nResultat:\t%s\n", res);
+	printf("test 4: \"ifenopef\",\"poneyvif\", \"lOL\"\nAttendu:\t|OllllLLLLOOOOOOl\nResultat:\t|%s\n", res);
 	res = ft_convert_base("150","0123456789", "01");
-	printf("\ntest 2: \"150\",\"0123456789\", \"01\"\nAttendu:\t10010110\nResultat:\t%s\n", res);
+	printf("\ntest 5: \"150\",\"0123456789\", \"01\"\nAttendu:\t|10010110\nResultat:\t|%s\n", res);
 	res = ft_convert_base("lol","pilou", "trole");
-	printf("\ntest 3: \"lol\",\"pilou\", \"trole\"\nAttendu:\tolo\nResultat:\t%s\n", res);
+	printf("\ntest 6: \"lol\",\"pilou\", \"trole\"\nAttendu:\t|olo\nResultat:\t|%s\n", res);
 	res = ft_convert_base("werqy","qwerty", "1234");
-	printf("\ntest 3: \"werqy\",\"qwerty\", \"1234\"\nAttendu:\t241412\nResultat:\t%s\n", res);
-
+	printf("\ntest 7: \"werqy\",\"qwerty\", \"1234\"\nAttendu:\t|241412\nResultat:\t|%s\n", res);
+	res = ft_convert_base("2147483647","0123456789", "01");
+	printf("\ntest 8: \"2147483647\",\"0123456789\", \"01\"\nAttendu:\t|1111111111111111111111111111111\nResultat:\t|%s\n", res);
+	res = ft_convert_base(argv[1], argv[2], argv[3]);
+	printf("\ntest 9: %s %s %s\nResultat:\t|%s\n", argv[1], argv[2], argv[3], res);
 	return (0);
 }
