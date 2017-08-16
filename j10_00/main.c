@@ -6,20 +6,23 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/16 16:01:08 by jjauzion          #+#    #+#             */
-/*   Updated: 2017/08/16 22:41:08 by jjauzion         ###   ########.fr       */
+/*   Updated: 2017/08/16 23:36:36 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdio.h>
 typedef	void(*fptr)(int);
 
 void	ft_putchar(char c);
 void	ft_putnbr(int nb);
 void	ft_addNdisplay(int i);
 int		ft_add(int i);
+int		ft_check_tab(char *str);
 
 void	ft_foreach(int *tab, int length, void(*f)(int));
 int		*ft_map(int *tab, int length, int(*f)(int));
+int		ft_any(char **tab, int(*f)(char*));
 
 int		main(void)
 {
@@ -32,7 +35,7 @@ int		main(void)
 	ft_foreach(tab, 5, f);
 */
 //	Exo2
-	int		(*f)(int);
+/*	int		(*f)(int);
 	int 	tab[5] = {1, 2, 3, 4, 5};
 	int		*ptab;
 	int		i;
@@ -46,7 +49,40 @@ int		main(void)
 		ft_putchar('\n');
 		i++;
 	}
+*/
+	//Exo3
+	int		(*f)(char*);	
+	int		res;
+	char	*tab[4];
 
+	f = &ft_check_tab;
+	tab[0] = "abcd";
+	tab[1] = "abcd";
+	tab[2] = "abcz";
+	tab[3] = 0;
+	res = ft_any(tab, f);
+	printf("resultat : %i (1 attendu)\n", res);
+	tab[0] = "abcd";
+	tab[1] = "abcd";
+	tab[2] = "ybjh";
+	tab[3] = 0;
+	res = ft_any(tab, f);
+	printf("resultat : %i (0 attendu)\n", res);
+
+	return (0);
+}
+
+int		ft_check_tab(char *str)
+{
+	int i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] == 'z')
+			return (1);
+		i++;
+	}
 	return (0);
 }
 
