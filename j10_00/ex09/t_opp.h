@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_any.c                                           :+:      :+:    :+:   */
+/*   t_opp.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/16 22:46:53 by jjauzion          #+#    #+#             */
-/*   Updated: 2017/08/17 08:49:00 by jjauzion         ###   ########.fr       */
+/*   Created: 2017/08/17 14:57:42 by jjauzion          #+#    #+#             */
+/*   Updated: 2017/08/17 20:02:15 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_any(char **tab, int (*f)(char*))
-{
-	int i;
+#ifndef T_OPP_H
+# define T_OPP_H
 
-	i = 0;
-	while (tab[i] != 0)
-	{
-		if (f(tab[i]))
-			return (1);
-		i++;
-	}
-	return (0);
-}
+typedef struct	s_opp
+{
+	char	*opperand;
+	int		(*fct)(int, int);
+}				t_opp;
+
+#endif

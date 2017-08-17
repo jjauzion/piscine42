@@ -1,25 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_any.c                                           :+:      :+:    :+:   */
+/*   ft_advanced_sort_wordtab.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/16 22:46:53 by jjauzion          #+#    #+#             */
-/*   Updated: 2017/08/17 08:49:00 by jjauzion         ###   ########.fr       */
+/*   Created: 2017/08/18 00:11:06 by jjauzion          #+#    #+#             */
+/*   Updated: 2017/08/18 00:15:50 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_any(char **tab, int (*f)(char*))
+void	ft_advanced_sort_wordtab(char **tab, int (*cmp)(char *, char *))
 {
-	int i;
+	int		i;
+	int		j;
+	int		out;
+	char	*tmp;
 
-	i = 0;
+	i = 1;
 	while (tab[i] != 0)
 	{
-		if (f(tab[i]))
-			return (1);
+		j = i;
+		out = 0;
+		while (cmp(tab[j], tab[j - 1]) < 0 && out == 0)
+		{
+			tmp = tab[j];
+			tab[j] = tab[j - 1];
+			tab[j - 1] = tmp;
+			j--;
+			if (j <= 0)
+			{
+				out = 1;
+				j = 1;
+			}
+		}
 		i++;
 	}
-	return (0);
 }

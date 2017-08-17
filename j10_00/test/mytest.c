@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_any.c                                           :+:      :+:    :+:   */
+/*   mytest.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/16 22:46:53 by jjauzion          #+#    #+#             */
-/*   Updated: 2017/08/17 08:49:00 by jjauzion         ###   ########.fr       */
+/*   Created: 2017/08/17 10:57:34 by jjauzion          #+#    #+#             */
+/*   Updated: 2017/08/17 11:54:25 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_any(char **tab, int (*f)(char*))
-{
-	int i;
+//void	ft_putstr(char *str);
 
-	i = 0;
-	while (tab[i] != 0)
-	{
-		if (f(tab[i]))
-			return (1);
-		i++;
-	}
+int		main(void)
+{
+	ft_putstr("Si tu lis cette ligne alors c'est gagner :)\n");
 	return (0);
 }

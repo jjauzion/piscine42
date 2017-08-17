@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_any.c                                           :+:      :+:    :+:   */
+/*   ft_is_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/16 22:46:53 by jjauzion          #+#    #+#             */
-/*   Updated: 2017/08/17 08:49:00 by jjauzion         ###   ########.fr       */
+/*   Created: 2017/08/17 08:49:37 by jjauzion          #+#    #+#             */
+/*   Updated: 2017/08/17 09:14:40 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_any(char **tab, int (*f)(char*))
+int		ft_is_sort(int *tab, int length, int (*f)(int, int))
 {
 	int i;
 
-	i = 0;
-	while (tab[i] != 0)
+	i = 1;
+	while (i < length)
 	{
-		if (f(tab[i]))
-			return (1);
+		if (f(tab[i - 1], tab[i]) > 0)
+			return (0);
 		i++;
 	}
-	return (0);
+	return (1);
 }

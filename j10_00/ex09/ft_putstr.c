@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_any.c                                           :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/16 22:46:53 by jjauzion          #+#    #+#             */
-/*   Updated: 2017/08/17 08:49:00 by jjauzion         ###   ########.fr       */
+/*   Created: 2017/08/04 12:53:07 by jjauzion          #+#    #+#             */
+/*   Updated: 2017/08/10 16:08:44 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_any(char **tab, int (*f)(char*))
+void	ft_putchar(char c);
+
+void	ft_putstr(char *str)
 {
 	int i;
 
 	i = 0;
-	while (tab[i] != 0)
-	{
-		if (f(tab[i]))
-			return (1);
-		i++;
-	}
-	return (0);
+	if (str == 0)
+		ft_putchar('\0');
+	else
+		while (*(str + i) != 0)
+		{
+			ft_putchar(*(str + i));
+			i++;
+		}
 }
