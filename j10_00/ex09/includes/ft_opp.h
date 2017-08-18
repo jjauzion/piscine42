@@ -1,43 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calculus.c                                      :+:      :+:    :+:   */
+/*   ft_opp.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/17 12:46:58 by jjauzion          #+#    #+#             */
-/*   Updated: 2017/08/17 20:06:33 by jjauzion         ###   ########.fr       */
+/*   Created: 2017/08/18 09:58:18 by jjauzion          #+#    #+#             */
+/*   Updated: 2017/08/18 11:15:17 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft.h"
+#ifndef FT_OPP_H
+# define FT_OPP_H
 
-int		ft_add(int a, int b)
+t_opp g_opptab[] =
 {
-	return (a + b);
-}
+	{"+", &ft_add},
+	{"-", &ft_sub},
+	{"*", &ft_mul},
+	{"/", &ft_div},
+	{"%", &ft_mod},
+	{"", &ft_usage}
+};
 
-int		ft_sub(int a, int b)
-{
-	return (a - b);
-}
-
-int		ft_mul(int a, int b)
-{
-	return (a * b);
-}
-
-int		ft_div(int a, int b)
-{
-	return (a / b);
-}
-
-int		ft_mod(int a, int b)
-{
-	return (a % b);
-}
-
-void	ft_usage(void)
-{
-	ft_putstr("RTFM\n");
-}
+#endif

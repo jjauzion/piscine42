@@ -6,7 +6,7 @@
 #    By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/08/17 09:23:55 by jjauzion          #+#    #+#              #
-#    Updated: 2017/08/17 20:08:54 by jjauzion         ###   ########.fr        #
+#    Updated: 2017/08/17 22:26:45 by jjauzion         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,24 +19,32 @@
 .SUFFIXES:
 
 # definition des variables
-NAME = prog
+NAME = do-op
 CC = gcc
-CFLAGS = -Werror -Wall -Wextra
+CFLAGS = -c -Werror -Wall -Wextra
+LIBDIR = -Iincludes/
+SRCS = srcs/do_op.c srcs/ft_calculus.c srcs/ft_putchar.c srcs/ft_strcmp.c srcs/ft_atoi.c srcs/ft_putnbr.c srcs/ft_strlen.c srcs/ft_putstr.c
+SRCS_O = do_op.o ft_calculus.o ft_putchar.o ft_strcmp.o ft_atoi.o ft_putnbr.o ft_strlen.o ft_putstr.o
 
-# all
-all:
-	$(CC) $(CFLAGS) do_op.c ft.h ft_calculus.c ft_opp.h t_opp.h ft_atoi.c ft_putchar.c ft_putstr.c ft_strlen.c ft_strcmp.c ft_putnbr.c
+
+# Rules
+all: $(NAME)
+
+$(NAME):
+	$(CC) $(CFLAGS) $(SRCS) $(LIBDIR)
+	$(CC) -o $(NAME) $(SRCS_O)
 
 #debbug
 db:
-	$(CC) $(CFLAGS) $(NAME) do_op.c ft.h ft_calculus.c ft_opp.h t_opp.h ft_atoi.c ft_putchar.c ft_putstr.c ft_strlen.c ft_strcmp.c ft_putnbr.c -g3 -fsanitize=address
+	$(CC) $(CFLAGS) $(SRCS) $(LIBDIR)
+	$(CC) -o $(NAME) $(SRCS_O) -g3 -fsanitize=address
 
 # clean
 clean:
-	rm -f *.o
+	rm -f $(SRCS_O)
 
 fclean: clean
-	rm -f $(NAME)
+	rm -rf $(NAME)*
 
 re: fclean all
 

@@ -1,26 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_opp.h                                           :+:      :+:    :+:   */
+/*   ft_calculus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/17 18:39:57 by jjauzion          #+#    #+#             */
-/*   Updated: 2017/08/17 18:40:46 by jjauzion         ###   ########.fr       */
+/*   Created: 2017/08/17 12:46:58 by jjauzion          #+#    #+#             */
+/*   Updated: 2017/08/17 21:41:14 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_OPP_H
-# define FT_OPP_H
+#include "ft.h"
 
-t_opp g_opptab[] =
+int		ft_add(int a, int b)
 {
-	{"+", &ft_add},
-	{"-", &ft_sub},
-	{"*", &ft_mul},
-	{"/", &ft_div},
-	{"%", &ft_mod},
-	{"", &ft_usage}
-};
+	return (a + b);
+}
 
-#endif
+int		ft_sub(int a, int b)
+{
+	return (a - b);
+}
+
+int		ft_mul(int a, int b)
+{
+	return (a * b);
+}
+
+int		ft_div(int a, int b)
+{
+	return (a / b);
+}
+
+int		ft_mod(int a, int b)
+{
+	return (a % b);
+}
