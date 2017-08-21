@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/14 15:02:33 by jjauzion          #+#    #+#             */
-/*   Updated: 2017/08/16 22:23:45 by jjauzion         ###   ########.fr       */
+/*   Updated: 2017/08/17 17:19:05 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int		main(int argc, char **argv)
 	}
 */
 //	Ex02
-/*	int *tab = NULL;
+	int *tab = NULL;
 	int min;
 	int max;
 	int i;
@@ -83,6 +83,7 @@ int		main(int argc, char **argv)
 	if (tab == NULL)
 	{
 		printf("error NULL returned\n");
+		printf("range=%i\n",range);
 		return (0);
 	}
 	i = 0;
@@ -92,7 +93,7 @@ int		main(int argc, char **argv)
 		printf("tab[%i]:\t%i\n", i, tab[i]);
 		i++;
 	}
-*/
+
 	//Exo3
 /*	char *str;
 
@@ -108,7 +109,7 @@ int		main(int argc, char **argv)
 	ft_print_words_tables(str);
 */
 //	Exo6
-	char *res;
+/*	char *res;
 	
 	if (argc != 4)
 	{
@@ -136,5 +137,5 @@ int		main(int argc, char **argv)
 	printf("\ntest 8: \"2147483647\",\"0123456789\", \"01\"\nAttendu:\t|1111111111111111111111111111111\nResultat:\t|%s\n", res);
 	res = ft_convert_base(argv[1], argv[2], argv[3]);
 	printf("\ntest 9: %s %s %s\nResultat:\t|%s\n", argv[1], argv[2], argv[3], res);
-	return (0);
+*/	return (0);
 }
