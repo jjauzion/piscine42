@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/21 10:18:20 by jjauzion          #+#    #+#             */
-/*   Updated: 2017/08/21 15:37:39 by jjauzion         ###   ########.fr       */
+/*   Updated: 2017/08/21 22:50:29 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ t_list	*ft_list_push_params(int ac, char **av)
 	i = 2;
 	while (i < ac)
 	{
-		ft_list_push_back(&list, av[i]);
+		ft_list_pushback(&list, av[i]);
 		i++;
 	}
 	return (list);
 }
 
-void	ft_list_push_back(t_list **begin_list, void *data)
+void	ft_list_pushback(t_list **begin_list, void *data)
 {
 	t_list	*list;
 

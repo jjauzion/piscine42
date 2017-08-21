@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list.h                                          :+:      :+:    :+:   */
+/*   ft_list_find.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/18 12:11:44 by jjauzion          #+#    #+#             */
-/*   Updated: 2017/08/21 20:22:50 by jjauzion         ###   ########.fr       */
+/*   Created: 2017/08/21 20:27:49 by jjauzion          #+#    #+#             */
+/*   Updated: 2017/08/21 20:50:36 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIST_H
-# define FT_LIST_H
+#include "ft_list.h"
 
-typedef struct	s_list
+t_list *ft_list_find(t_list *begin_list, void *data_ref, int (*cmp)())
 {
-	struct s_list	*next;
-	void			*data;
-
-}				t_list;
-
-t_list			*ft_create_elem(void *data);
-void			ft_list_push_back(t_list **begin_list, void *data);
-
-#endif
+	while (begin_list)
+	{
+		if ((*cmp)(begin_list->data, data_ref))
+			return (begin_list);
+		begin_list = begin_list->next;
+	}
+	return (0);
+}

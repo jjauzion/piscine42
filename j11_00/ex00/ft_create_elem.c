@@ -6,14 +6,14 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/18 12:14:08 by jjauzion          #+#    #+#             */
-/*   Updated: 2017/08/18 15:56:17 by jjauzion         ###   ########.fr       */
+/*   Updated: 2017/08/21 20:17:13 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 #include <stdlib.h>
 
-t_list *ft_create_elem(void *data)
+t_list	*ft_create_elem(void *data)
 {
 	t_list	*list;
 
