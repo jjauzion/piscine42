@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/06 22:41:10 by jjauzion          #+#    #+#             */
-/*   Updated: 2017/08/09 21:40:20 by jjauzion         ###   ########.fr       */
+/*   Updated: 2017/08/10 13:29:04 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ int main (int argc, char **argv)
 //	printf("power_ite=%i\n", i);
 
 	//Exo3
-	i = ft_recursive_power(atoi(argv[1]), atoi(argv[2]));
-	printf("power_recu=%i\n", i);
+//	i = ft_recursive_power(atoi(argv[1]), atoi(argv[2]));
+//	printf("power_recu=%i\n", i);
 
 	//Exo4
 //	printf("fibonacci(%i)=%i\n", i, ft_fibonacci(atoi(argv[1])));
@@ -51,7 +51,7 @@ int main (int argc, char **argv)
 //	printf("sqrt2=%i\n", sqrt2(atoi(argv[1])));
 
 	//Exo6
-//	printf("Is_prime=%i\n", ft_is_prime(atoi(argv[1])));
+	printf("Is_prime=%i\n", ft_is_prime(atoi(argv[1])));
 
 	//Exo7
 //	printf("Next_prime=%i\n",ft_find_next_prime(atoi(argv[1])));
