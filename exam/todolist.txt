@@ -1,0 +1,12 @@
+brainfuck
+print memory
+itoa base
+atoi
+
+swap bit
+print bit
+
+makefile
+
+structure
+typedef
